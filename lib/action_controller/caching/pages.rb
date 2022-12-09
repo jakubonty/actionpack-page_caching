@@ -174,7 +174,7 @@ module ActionController
             return unless path
 
             FileUtils.makedirs(File.dirname(path))
-            File.open(path, "wb+") { |f| f.write(content) }
+            # File.open(path, "wb+") { |f| f.write(content) }
 
             if gzip
               Zlib::GzipWriter.open(path + ".gz", gzip) { |f| f.write(content) }
